@@ -1,8 +1,15 @@
 const fs = require("fs");
 const readFileSyncAddress = "test.txt";
-const input = fs.readFileSync(readFileSyncAddress).toString().split("\n");
+const input = fs
+  .readFileSync(readFileSyncAddress)
+  .toString()
+  .split(" ")
+  .reverse();
 
-const str = input[0];
-const word = input[1];
+let result = "";
 
-console.log(str.indexOf(word));
+for (let i = 0; i < input.length; i++) {
+  result += input[i];
+}
+
+console.log(result);
